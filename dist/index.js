@@ -1,4 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-console.log("Connect Four starting...");
+import { Board } from "./game/board.js";
+import { Piece } from "./game/piece.js";
+let b = new Board();
+b.logBoard();
+b.dropPiece(Piece.RED, 5);
+b.logBoard();
 //# sourceMappingURL=index.js.map
