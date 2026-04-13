@@ -1,0 +1,36 @@
+#board {
+  display: grid;
+  grid-template-columns: repeat(7, 60px);
+  gap: 8px;
+  background: blue;
+  padding: 10px;
+  width: fit-content;
+}
+
+#current-player-text {
+    color :red
+}
+
+body {
+  background-color: black;
+}
+
+h1 {
+    color : white;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.red {
+  background: red;
+}
+
+.yellow {
+  background: yellow;
+}

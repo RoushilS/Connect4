@@ -21,6 +21,10 @@ export class Board {
     return -1;
   }
 
+  getBoard(): Piece[][] {
+  return this.board;
+}
+
   isWon() {
     if (this.checkHorizontals()!=null) return this.checkHorizontals();
     if (this.checkVerticals()!=null) return this.checkVerticals();
@@ -88,5 +92,13 @@ export class Board {
       console.log(outputRow);
     }
     console.log("");
+  }
+
+  clear() {
+    for (let i = 0; i<this.rows; i++) {
+      for (let j = 0; j<this.cols; j++) {
+        this.board[i]![j] = Piece.EMPTY
+      }
+    }
   }
 }

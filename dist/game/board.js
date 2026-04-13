@@ -14,6 +14,9 @@ export class Board {
         }
         return -1;
     }
+    getBoard() {
+        return this.board;
+    }
     isWon() {
         if (this.checkHorizontals() != null)
             return this.checkHorizontals();
@@ -81,6 +84,13 @@ export class Board {
             console.log(outputRow);
         }
         console.log("");
+    }
+    clear() {
+        for (let i = 0; i < this.rows; i++) {
+            for (let j = 0; j < this.cols; j++) {
+                this.board[i][j] = Piece.EMPTY;
+            }
+        }
     }
 }
 //# sourceMappingURL=board.js.map
