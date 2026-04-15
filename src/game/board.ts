@@ -40,6 +40,10 @@ export class Board {
   return newBoard;
 }
 
+getBoardIndex(row : number, col : number) {
+  return this.board[row]![col]
+}
+
   isWon() {
     if (this.checkHorizontals()!=null) return this.checkHorizontals();
     if (this.checkVerticals()!=null) return this.checkVerticals();
@@ -104,9 +108,7 @@ export class Board {
         else if (this.board[row]![column] == Piece.RED) outputRow += "R";
         else outputRow += "0";
       }
-      console.log(outputRow);
     }
-    console.log("");
   }
 
   clear() {

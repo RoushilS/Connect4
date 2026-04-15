@@ -17,6 +17,20 @@ export class Board {
     getBoard() {
         return this.board;
     }
+    clone() {
+        const newBoard = new Board();
+        const original = this.board;
+        const copy = newBoard.board;
+        for (let i = 0; i < this.rows; i++) {
+            for (let j = 0; j < this.cols; j++) {
+                copy[i][j] = original[i][j];
+            }
+        }
+        return newBoard;
+    }
+    getBoardIndex(row, col) {
+        return this.board[row][col];
+    }
     isWon() {
         if (this.checkHorizontals() != null)
             return this.checkHorizontals();
@@ -81,9 +95,7 @@ export class Board {
                 else
                     outputRow += "0";
             }
-            console.log(outputRow);
         }
-        console.log("");
     }
     clear() {
         for (let i = 0; i < this.rows; i++) {

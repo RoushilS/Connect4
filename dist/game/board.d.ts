@@ -6,6 +6,8 @@ export declare class Board {
     constructor();
     dropPiece(piece: Piece, column: number): number;
     getBoard(): Piece[][];
+    clone(): Board;
+    getBoardIndex(row: number, col: number): Piece | undefined;
     isWon(): Piece.RED | Piece.YELLOW | null;
     checkFour(i1: Piece, i2: Piece, i3: Piece, i4: Piece): Piece.RED | Piece.YELLOW | null;
     checkHorizontals(): Piece.RED | Piece.YELLOW | null;

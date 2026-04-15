@@ -1,0 +1,1 @@
+{"version":3,"file":"random.js","sourceRoot":"","sources":["../../src/models/random.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,YAAY,EAAE,MAAM,sBAAsB,CAAC;AACpD,OAAO,EAAE,KAAK,EAAE,MAAM,YAAY,CAAC;AAEnC,MAAM,OAAO,WAAY,SAAQ,KAAK;IAElC;QACI,KAAK,CAAC,CAAC,IAAI,YAAY,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACjC,CAAC;CAEJ"}

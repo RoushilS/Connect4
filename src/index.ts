@@ -1,10 +1,12 @@
 import { Board } from "./game/board.js";
 import { Piece } from "./game/piece.js";
+import { RandomModel } from "./models/random.js";
 
 const gameBoard = new Board();
 const boardDiv = document.getElementById("board")!;
 const resetButton = document.getElementById("resetButton")!;
 const currentPlayerText = document.getElementById('current-player-text') as HTMLElement;
+const AI = new RandomModel()
 
 resetButton.addEventListener("click", handleReset);
 
@@ -13,7 +15,6 @@ let currentPlayer = Piece.RED;
 function render() {
   boardDiv.innerHTML = "";
   const grid = gameBoard.getBoard();
-  console.log("rendering");
 
   for (let row = 0; row < 6; row++) {
     for (let col = 0; col < 7; col++) {
@@ -21,7 +22,6 @@ function render() {
       cell.classList.add("cell");
 
       const value = grid[row]![col];
-      console.log(row, col)
 
       if (value === Piece.RED) cell.classList.add("red");
       else if (value === Piece.YELLOW) cell.classList.add("yellow");
@@ -35,6 +35,26 @@ function render() {
 
 function handleMove(col: number) {
   const row = gameBoard.dropPiece(currentPlayer, col);
+  if (row === -1) return;
+
+  const winner = gameBoard.isWon();
+
+  if (winner !== null) {
+    render()
+    alert(winner === Piece.RED ? "Red wins!" : "Yellow wins!");
+    return
+  }
+
+  currentPlayer =
+    currentPlayer === Piece.RED ? Piece.YELLOW : Piece.RED;
+  updatePlayerTurn()
+  render();
+
+  HandleAIMove()
+}
+
+function HandleAIMove() {
+  const row = gameBoard.dropPiece(currentPlayer, AI.determineMove(gameBoard, currentPlayer));
   if (row === -1) return;
 
   const winner = gameBoard.isWon();
