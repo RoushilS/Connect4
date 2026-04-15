@@ -1,19 +1,12 @@
+import { Board } from "../game/board.js";
 import { Piece } from "../game/piece.js";
 
 export abstract class Weight {
+  public influence: number;
 
-    public influence : number = 1
+  constructor(influence: number = 1) {
+    this.influence = influence;
+  }
 
-    private board: Piece[][];
-
-    constructor(board : Piece[][], influence? : number) {
-        this.board = board;
-        this.influence = influence ?? 1;
-    }
-
-    public abstract generateWeights(column : number, board : Piece[][]) : number
-
-    public getWeight(column : number): number {
-        return this.influence*this.generateWeights(column, this.board)
-    }
+  abstract evaluate(board: Board, player: Piece): number;
 }

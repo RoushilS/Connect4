@@ -25,6 +25,21 @@ export class Board {
   return this.board;
 }
 
+  clone(): Board {
+  const newBoard = new Board();
+
+  const original = this.board;
+  const copy = newBoard.board;
+
+  for (let i = 0; i < this.rows; i++) {
+    for (let j = 0; j < this.cols; j++) {
+      copy[i]![j] = original[i]![j]!;
+    }
+  }
+
+  return newBoard;
+}
+
   isWon() {
     if (this.checkHorizontals()!=null) return this.checkHorizontals();
     if (this.checkVerticals()!=null) return this.checkVerticals();

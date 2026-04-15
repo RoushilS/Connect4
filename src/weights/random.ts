@@ -1,8 +1,9 @@
-import { Piece } from "../game/piece.js";
 import { Weight } from "./weight.js";
+import { Board } from "../game/board.js";
+import { Piece } from "../game/piece.js";
 
-class RandomWeight extends Weight {
-    public override generateWeights(column: number, board: Piece[][]): number {
-        return Math.random();
-    }
+export class RandomWeight extends Weight {
+  evaluate(board: Board, player: Piece): number {
+    return Math.random();
+  }
 }
