@@ -1,12 +1,22 @@
 import { Board } from "./game/board.js";
 import { Piece } from "./game/piece.js";
 import { RandomModel } from "./models/random.js";
+import { Model } from "./models/model.js";
+import { CenterWeight } from "./weights/center.js";
+import { RandomWeight } from "./weights/random.js";
+import { WinningWeight } from "./weights/winning.js";
+import { LosingWeight } from "./weights/losing.js";
 
 const gameBoard = new Board();
 const boardDiv = document.getElementById("board")!;
 const resetButton = document.getElementById("resetButton")!;
 const currentPlayerText = document.getElementById('current-player-text') as HTMLElement;
-const AI = new RandomModel()
+const AI = new Model([
+  new CenterWeight(2),
+  new RandomWeight(1),
+  new WinningWeight(30),
+  new LosingWeight(20)
+]);
 
 resetButton.addEventListener("click", handleReset);
 

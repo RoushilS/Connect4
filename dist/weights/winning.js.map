@@ -1,0 +1,1 @@
+{"version":3,"file":"winning.js","sourceRoot":"","sources":["../../src/weights/winning.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,aAAa,CAAC;AAIrC,MAAM,OAAO,aAAc,SAAQ,MAAM;IACvC,QAAQ,CAAC,KAAY,EAAE,MAAa;QAClC,OAAO,KAAK,CAAC,KAAK,EAAE,KAAK,MAAM,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAA;IACvC,CAAC;CACJ"}

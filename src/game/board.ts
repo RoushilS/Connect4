@@ -58,6 +58,10 @@ getBoardIndex(row : number, col : number) {
     return null;
   }
 
+  checkWinnable() {
+
+  }
+
   checkHorizontals() {
     for (let row = 0; row < this.rows; row++) {
       for (let col = 0; col <= this.cols-4; col++) {

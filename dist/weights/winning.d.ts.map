@@ -1,0 +1,1 @@
+{"version":3,"file":"winning.d.ts","sourceRoot":"","sources":["../../src/weights/winning.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,aAAa,CAAC;AACrC,OAAO,EAAE,KAAK,EAAE,MAAM,kBAAkB,CAAC;AACzC,OAAO,EAAE,KAAK,EAAE,MAAM,kBAAkB,CAAC;AAEzC,qBAAa,aAAc,SAAQ,MAAM;IACvC,QAAQ,CAAC,KAAK,EAAE,KAAK,EAAE,MAAM,EAAE,KAAK,GAAG,MAAM;CAG9C"}
